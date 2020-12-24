@@ -1,0 +1,25 @@
+{
+    "name": "to-do-list",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/UmairAhmad125/to-do-list.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/UmairAhmad125/to-do-list/issues"
+    },
+    "homepage": "https://github.com/UmairAhmad125/to-do-list#readme",
+    "devDependencies": {
+        "webpack": "^5.11.0",
+        "webpack-cli": "^4.2.0"
+    }
+}
