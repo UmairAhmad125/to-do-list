@@ -1,4 +1,1 @@
-console.log("hello");
-
-
-alert("hello");
+import './style.css';
