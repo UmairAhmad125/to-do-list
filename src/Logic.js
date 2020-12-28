@@ -67,9 +67,9 @@ const Logic = (projects, selectedlistitem, savelocal) => {
       titem.innerHTML = `
     <h4>${item.name}.</h4>
     <div class="btncont">
-    <button class="i-display" data-index="${index}"><i class="fas fa-file-alt icon mr"></i>Show</button>
-    <button class="i-update" data-index="${index}"><i class="fas fa-pen-alt icon mr" ></i>Edit</button>
-    <button class="i-remove" data-index="${index}"><i class="far fa-trash-alt icon mr"></i>Remove</button>
+    <button class="i-display btn-f" data-index="${index}"><i class="fas fa-file-alt icon mr"></i>Show</button>
+    <button class="i-update btn-f" data-index="${index}"><i class="fas fa-pen-alt icon mr" ></i>Edit</button>
+    <button class="i-remove btn-f" data-index="${index}"><i class="far fa-trash-alt icon mr"></i>Remove</button>
     </div>`;
       tasklist.appendChild(titem);
     });
@@ -155,8 +155,6 @@ const Logic = (projects, selectedlistitem, savelocal) => {
     }
 
   })
-
-
 
   const removeproject = (index) => {
     projects.splice(index, 1);
