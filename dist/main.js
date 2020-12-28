@@ -1,1 +1,1 @@
-console.log("Testing webpack");
+console.log("hello"),alert("hello");
