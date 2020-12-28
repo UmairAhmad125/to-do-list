@@ -1,11 +1,9 @@
-const Taskgenerator=(name,date,priority,description)=>{
-return {
-  name:name,
-  date:date,
-  priority:priority,
-  description:description
-}
-}
+const Taskgenerator = (name, date, priority, description) => ({
+  name,
+  date,
+  priority,
+  description,
+});
 
 
 export default Taskgenerator;
