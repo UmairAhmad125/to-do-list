@@ -25,7 +25,7 @@ In this project we developed a javascript to-do list app that:
 - webpack
 - fontawesome
 
-# Getting Started
+## Getting Started
 
 To get a local copy of the repository please run the following commands on your terminal:
 
@@ -38,12 +38,12 @@ $ git clone `https://github.com/UmairAhmad125/to-do-list.git`
 $ cd to-do-list
 $ open terminal or gitbash
 $ run npm install
-$ run your "local server" 
+$ run your "localhost server"
 ```
 ## Live vesion
 [click here](https://basiclibrary.netlify.app/)
 
-# Authors
+## Authors
 
 👤 **Avijit Karmaker**
 
