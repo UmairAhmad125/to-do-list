@@ -11,7 +11,7 @@ const Application = () => {
     id: '1',
     name: 'default',
     todo: [{
-      name: 'mytask', date: '21-12-14', priority: 'high', description: 'This is real work.',
+      name: 'Visit doctor office', date: '21-12-14', priority: 'high', description: 'Have to get a health checkout',
     }],
   }];
   const projects = JSON.parse(localStorage.getItem(local_storage_key)) || stored;

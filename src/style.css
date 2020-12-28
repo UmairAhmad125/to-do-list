@@ -99,6 +99,13 @@ h5 {
   overflow-y: scroll;
 }
 
+.d-btn {
+  background-color:#f66;
+  color: white;
+  border: 1px white solid;
+  border-radius: 2px;
+}
+
 .li-item {
   list-style-type: none;
   background-color: rgba(243, 149, 130, 0.5);
@@ -258,6 +265,7 @@ label {
 .btncont {
   width: 100%;
   text-align: right;
+  margin-top: 15px;
 }
 .btn-f {
   color:white;
@@ -267,7 +275,7 @@ label {
 }
 
 .active {
-  background-color: #ff1a1a;
+  background-color:#5993e5;
   color: white;
 }
 
