@@ -36,7 +36,9 @@ $ cd <folder>
 ```bash
 $ git clone `https://github.com/UmairAhmad125/to-do-list.git`
 $ cd to-do-list
-$ Open the index.html file using your favorite browser
+$ open terminal or gitbash
+$ run npm install
+$ run your "local server" 
 ```
 ## Live vesion
 [click here](https://basiclibrary.netlify.app/)
