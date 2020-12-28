@@ -41,7 +41,7 @@ $ run npm install
 $ run your "localhost server"
 ```
 ## Live vesion
-[click here](https://basiclibrary.netlify.app/)
+[click here](https://elegant-to-do-list.netlify.app/)
 
 ## Authors
 
