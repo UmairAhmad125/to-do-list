@@ -4,7 +4,7 @@ import Logic from './Logic';
 
 const Application = () => {
   Interface();
-
+  const local_storage_default="default.item";
   const local_storage_key = 'all.projects';
   const local_storage_select = 'selected.item';
   const stored = [{
