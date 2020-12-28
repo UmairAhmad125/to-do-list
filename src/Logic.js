@@ -26,7 +26,7 @@ const Logic = (projects, selectedlistitem, savelocal) => {
         projecthead.textContent = item.name;
       }
       liitem.classList.add('li-item');
-      liitem.innerHTML = `${item.name} <i class="far fa-trash-alt ml icon d-icon" onclick="removeproject(${index})"></i>`;
+      liitem.innerHTML = `${item.name} <i class="far fa-trash-alt ml icon d-icon" data-index="${index}"></i>`;
       projectcont.appendChild(liitem);
     });
   };
@@ -67,9 +67,9 @@ const Logic = (projects, selectedlistitem, savelocal) => {
       titem.innerHTML = `
     <h4>${item.name}.</h4>
     <div class="btncont">
-    <i class="fas fa-file-alt icon" onclick="dtaskinfo(${index})"></i>
-    <i class="fas fa-pen-alt ml icon" onclick="taskupdate(${index})"></i>
-    <i class="far fa-trash-alt ml icon" onclick="removetask(${index})"></i>
+    <i class="fas fa-file-alt icon i-display" data-index="${index}"></i>
+    <i class="fas fa-pen-alt ml icon i-update" data-index="${index}"></i>
+    <i class="far fa-trash-alt ml icon i-remove" data-index="${index}"></i>
     </div>`;
       tasklist.appendChild(titem);
     });
@@ -131,6 +131,32 @@ const Logic = (projects, selectedlistitem, savelocal) => {
     console.log('working');
   });
 
+  const projectcont = document.querySelector('.projectlist');
+  projectcont.addEventListener("click",(e)=>{
+  if(e.target.classList.contains("d-icon")){
+    const index=e.target.dataset.index;
+    removeproject(index);
+  }
+  })
+
+  const taskcont=document.querySelector(".tasklist");
+  taskcont.addEventListener("click",(e)=>{
+    if(e.target.classList.contains("i-display")){
+      const index=e.target.dataset.index;
+      dtaskinfo(index);
+    }
+     else if(e.target.classList.contains("i-update")) {
+      const index=e.target.dataset.index;
+      taskupdate(index);
+    }
+    else if(e.target.classList.contains("i-remove")){
+      const index=e.target.dataset.index;
+      removetask(index);
+    }
+
+  })
+
+
 
   const removeproject = (index) => {
     projects.splice(index, 1);
@@ -147,10 +173,10 @@ const Logic = (projects, selectedlistitem, savelocal) => {
   };
 
   const dtaskinfo = (index) => {
-    const selectedproject = projects.find((item) => item.id === selectedlistitem);
-    const infodiv = document.querySelector('.taskinfo');
-    infodiv.classList.add('show');
-    infodiv.innerHTML = `
+  const selectedproject = projects.find((item) => item.id === selectedlistitem);
+  const infodiv = document.querySelector('.taskinfo');
+  infodiv.classList.add('show');
+  infodiv.innerHTML = `
   <div class="info">
   <i class="fas fa-times close" onclick="removedisplay()"></i>
   <h3>Task Details</h3>
