@@ -38,6 +38,7 @@ $ git clone `https://github.com/UmairAhmad125/to-do-list.git`
 $ cd to-do-list
 $ open terminal or gitbash
 $ run npm install
+$ run "npm run build"
 $ run your "localhost server"
 ```
 ## Live vesion
