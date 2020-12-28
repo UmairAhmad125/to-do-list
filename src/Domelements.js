@@ -8,7 +8,7 @@ const Domelements=()=>{
   navbar.classList.add("navbar");
   navbar.innerHTML=`
   <div class="itemcont">
-  <img src="list.png" id="list">
+  <img src="${Image}" id="list">
   <h3 id="todo">Todo-List</h3>
   </div>`
 

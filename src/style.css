@@ -16,7 +16,7 @@ h1,h2,h3,h4,h5 {
   width: 70%;
   margin: 2% auto;
   background-color:#FDE8E8;
-  height:80vh;
+  height:85vh;
   position: relative;
 }
 
@@ -46,7 +46,7 @@ h1,h2,h3,h4,h5 {
 
 .mbody {
   display: grid;
-  grid-gap: 5px;
+  grid-gap: 10px;
   grid-template-columns: 1fr 2fr;
   padding: 1%;
 
