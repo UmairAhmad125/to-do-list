@@ -26,7 +26,7 @@ const Logic = (projects, selectedlistitem, savelocal) => {
         projecthead.textContent = item.name;
       }
       liitem.classList.add('li-item');
-      liitem.innerHTML = `${item.name} <i class="far fa-trash-alt ml icon d-icon" data-index="${index}"></i>`;
+      liitem.innerHTML = `${item.name} <button class="d-icon d-btn" data-index="${index}"><i class="far fa-trash-alt icon d-icon"></i></button>`;
       projectcont.appendChild(liitem);
     });
   };

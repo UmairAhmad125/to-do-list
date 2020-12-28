@@ -257,13 +257,12 @@ label {
   margin-left: 10px;
 }
 
-.icon {
+.d-btn {
   cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.icon:hover {
-  color: rgba(243, 149, 130);
+  text-align: center;
+  background-color:#5993e5;;
+  border: 1px white solid;
+  color:white;
 }
 
 .active {
