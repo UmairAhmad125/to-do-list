@@ -1,7 +1,7 @@
 import Projectgenerator from './Projectgenerator';
 import Taskgenerator from './Taskgenerator';
 
-const Logic = (projects, selectedlistitem, savelocal) => {
+const Logic = (projects, selectedlistitem, savelocal,stored) => {
   const addproject = () => {
     const pname = document.querySelector('#input');
     const proname = pname.value;

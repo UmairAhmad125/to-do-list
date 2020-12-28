@@ -25,7 +25,7 @@ const Application = () => {
     localStorage.setItem(local_storage_select, selectedlistitem);
   };
 
-  Logic(projects, selectedlistitem, savelocal);
+  Logic(projects, selectedlistitem, savelocal,stored);
 };
 
 
