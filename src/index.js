@@ -1,5 +1,5 @@
 import './style.css';
-import Interface from './Interface';
+import Application from './app.js';
 
 
-Interface();
+Application();
