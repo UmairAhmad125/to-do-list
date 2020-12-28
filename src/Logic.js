@@ -67,9 +67,9 @@ const Logic = (projects, selectedlistitem, savelocal) => {
       titem.innerHTML = `
     <h4>${item.name}.</h4>
     <div class="btncont">
-    <i class="fas fa-file-alt icon i-display" data-index="${index}"></i>
-    <i class="fas fa-pen-alt ml icon i-update" data-index="${index}"></i>
-    <i class="far fa-trash-alt ml icon i-remove" data-index="${index}"></i>
+    <button class="i-display" data-index="${index}"><i class="fas fa-file-alt icon mr"></i>Show</button>
+    <button class="i-update" data-index="${index}"><i class="fas fa-pen-alt icon mr" ></i>Edit</button>
+    <button class="i-remove" data-index="${index}"><i class="far fa-trash-alt icon mr"></i>Remove</button>
     </div>`;
       tasklist.appendChild(titem);
     });
@@ -93,8 +93,8 @@ const Logic = (projects, selectedlistitem, savelocal) => {
   pform.addEventListener('submit', (e) => {
     e.preventDefault();
     addproject();
-    displayproject();
     savelocal();
+    displayproject();
   });
 
 
@@ -160,16 +160,16 @@ const Logic = (projects, selectedlistitem, savelocal) => {
 
   const removeproject = (index) => {
     projects.splice(index, 1);
-    displayproject();
     savelocal();
+    displayproject();
   };
 
 
   const removetask = (index) => {
     const selectedproject = projects.find((item) => item.id === selectedlistitem);
     selectedproject.todo.splice(index, 1);
-    displaytask();
     savelocal();
+    displaytask();
   };
 
   const dtaskinfo = (index) => {
@@ -178,7 +178,7 @@ const Logic = (projects, selectedlistitem, savelocal) => {
   infodiv.classList.add('show');
   infodiv.innerHTML = `
   <div class="info">
-  <i class="fas fa-times close" onclick="removedisplay()"></i>
+  <button class="close">close</button>
   <h3>Task Details</h3>
   <hr>
   <p>Task Name: <br> ${selectedproject.todo[index].name}</p>
@@ -188,6 +188,14 @@ const Logic = (projects, selectedlistitem, savelocal) => {
   </div>
   `;
   };
+
+  const infodiv = document.querySelector('.taskinfo');
+  infodiv.addEventListener("click",(e)=>{
+    e.preventDefault();
+    if(e.target.classList.contains("close")){
+      removedisplay();
+    }
+  })
 
 
   const removedisplay = () => {

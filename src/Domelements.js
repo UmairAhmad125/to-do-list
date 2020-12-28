@@ -77,7 +77,7 @@ const Domelements = () => {
   </select>
 
   <label for="description">Description:</label>
-  <textarea id="description" name="description" rows="4" cols="50"></textarea>
+  <input id="description" name="description"></input>
 
   <div class="fbtncont">
   <button type="submit" id="tasksubmit">Submit</button>
@@ -110,7 +110,7 @@ const Domelements = () => {
   <input type="hidden" id="index">
 
   <label for="udescription">Description:</label>
-  <textarea id="udescription" name="description" rows="4" cols="50"></textarea>
+  <input id="udescription" name="description"></input>
 
   <div class="fbtncont">
   <button type="submit" id="taskupdate">Submit</button>

@@ -245,24 +245,19 @@ label {
 
 .t-item {
   list-style-type: none;
-  display: flex;
-  justify-content: space-between;
   border-bottom: 1px rgba(243, 149, 130, 0.54) solid;
   padding: 5px;
   margin: 3% auto 5% auto;
   color: grey;
 }
 
-.ml {
-  margin-left: 10px;
+.mr {
+  margin-right:5px;
 }
 
-.d-btn {
-  cursor: pointer;
-  text-align: center;
-  background-color:#5993e5;;
-  border: 1px white solid;
-  color:white;
+.btncont {
+  width: 100%;
+  text-align: right;
 }
 
 .active {
