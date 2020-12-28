@@ -26,7 +26,7 @@ const Logic = (projects, selectedlistitem, savelocal,stored) => {
         projecthead.textContent = item.name;
       }
       liitem.classList.add('li-item');
-      liitem.innerHTML = `${item.name} <button class="d-icon d-btn" data-index="${index}"><i class="far fa-trash-alt icon d-icon"></i></button>`;
+      liitem.innerHTML = `${item.name} <button class="d-icon d-btn" data-index="${index}">X</button>`;
       projectcont.appendChild(liitem);
     });
   };
@@ -88,6 +88,7 @@ const Logic = (projects, selectedlistitem, savelocal,stored) => {
 
   displayproject();
   displaytask();
+  savelocal();
 
   const pform = document.querySelector('.projectform');
   pform.addEventListener('submit', (e) => {
@@ -155,6 +156,7 @@ const Logic = (projects, selectedlistitem, savelocal,stored) => {
 
   const removeproject = (index) => {
     projects.splice(index, 1);
+    selectedlistitem=stored[0].id;
     savelocal();
     displayproject();
   };
