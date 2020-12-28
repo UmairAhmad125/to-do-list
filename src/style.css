@@ -100,7 +100,7 @@ h5 {
 }
 
 .d-btn {
-  background-color:#f66;
+  background-color: #f66;
   color: white;
   border: 1px white solid;
   border-radius: 2px;
@@ -259,7 +259,7 @@ label {
 }
 
 .mr {
-  margin-right:5px;
+  margin-right: 5px;
 }
 
 .btncont {
@@ -267,15 +267,16 @@ label {
   text-align: right;
   margin-top: 15px;
 }
+
 .btn-f {
-  color:white;
+  color: white;
   background-color: #f66;
   border: 1px solid black;
   padding: 5px 10px;
 }
 
 .active {
-  background-color:#5993e5;
+  background-color: #5993e5;
   color: white;
 }
 

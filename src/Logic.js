@@ -132,29 +132,26 @@ const Logic = (projects, selectedlistitem, savelocal) => {
   });
 
   const projectcont = document.querySelector('.projectlist');
-  projectcont.addEventListener("click",(e)=>{
-  if(e.target.classList.contains("d-icon")){
-    const index=e.target.dataset.index;
-    removeproject(index);
-  }
-  })
+  projectcont.addEventListener('click', (e) => {
+    if (e.target.classList.contains('d-icon')) {
+      const { index } = e.target.dataset;
+      removeproject(index);
+    }
+  });
 
-  const taskcont=document.querySelector(".tasklist");
-  taskcont.addEventListener("click",(e)=>{
-    if(e.target.classList.contains("i-display")){
-      const index=e.target.dataset.index;
+  const taskcont = document.querySelector('.tasklist');
+  taskcont.addEventListener('click', (e) => {
+    if (e.target.classList.contains('i-display')) {
+      const { index } = e.target.dataset;
       dtaskinfo(index);
-    }
-     else if(e.target.classList.contains("i-update")) {
-      const index=e.target.dataset.index;
+    } else if (e.target.classList.contains('i-update')) {
+      const { index } = e.target.dataset;
       taskupdate(index);
-    }
-    else if(e.target.classList.contains("i-remove")){
-      const index=e.target.dataset.index;
+    } else if (e.target.classList.contains('i-remove')) {
+      const { index } = e.target.dataset;
       removetask(index);
     }
-
-  })
+  });
 
   const removeproject = (index) => {
     projects.splice(index, 1);
@@ -171,10 +168,10 @@ const Logic = (projects, selectedlistitem, savelocal) => {
   };
 
   const dtaskinfo = (index) => {
-  const selectedproject = projects.find((item) => item.id === selectedlistitem);
-  const infodiv = document.querySelector('.taskinfo');
-  infodiv.classList.add('show');
-  infodiv.innerHTML = `
+    const selectedproject = projects.find((item) => item.id === selectedlistitem);
+    const infodiv = document.querySelector('.taskinfo');
+    infodiv.classList.add('show');
+    infodiv.innerHTML = `
   <div class="info">
   <button class="close">close</button>
   <h3>Task Details</h3>
@@ -188,12 +185,12 @@ const Logic = (projects, selectedlistitem, savelocal) => {
   };
 
   const infodiv = document.querySelector('.taskinfo');
-  infodiv.addEventListener("click",(e)=>{
+  infodiv.addEventListener('click', (e) => {
     e.preventDefault();
-    if(e.target.classList.contains("close")){
+    if (e.target.classList.contains('close')) {
       removedisplay();
     }
-  })
+  });
 
 
   const removedisplay = () => {
