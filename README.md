@@ -2,7 +2,7 @@
 > This is a Microverse javascript project that allows users to create to-do list for their day to day activity.
 By using this app user can create different projects and inside individual projects user can create to do list. This app allows user to map and plan their day to day activities. All the created data remains stored even if user refreshes the browser. An user can revisit the app anytime and can see what activities they have stored in different projects,
 
-![screenshot](./assets/interface1.png)
+![screenshot](./src/assets/interface1.png)
 
 ## Features
 In this project we developed a javascript to-do list app that:
