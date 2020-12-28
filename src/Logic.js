@@ -1,7 +1,7 @@
 import Projectgenerator from './Projectgenerator';
 import Taskgenerator from './Taskgenerator';
 
-const Logic = (projects, selectedlistitem, savelocal,stored) => {
+const Logic = (projects, selectedlistitem, savelocal, stored) => {
   const addproject = () => {
     const pname = document.querySelector('#input');
     const proname = pname.value;
@@ -26,7 +26,7 @@ const Logic = (projects, selectedlistitem, savelocal,stored) => {
         projecthead.textContent = item.name;
       }
       liitem.classList.add('li-item');
-      liitem.innerHTML = `${item.name} <button class="${index===0?"hide":"normal"} d-icon d-btn" data-index="${index}">X</button>`;
+      liitem.innerHTML = `${item.name} <button class="${index === 0 ? 'hide' : 'normal'} d-icon d-btn" data-index="${index}">X</button>`;
       projectcont.appendChild(liitem);
     });
   };
@@ -57,6 +57,66 @@ const Logic = (projects, selectedlistitem, savelocal,stored) => {
     description.value = '';
   };
 
+  const dtaskinfo = (index) => {
+    const selectedproject = projects.find((item) => item.id === selectedlistitem);
+    const infodiv = document.querySelector('.taskinfo');
+    infodiv.classList.add('show');
+    infodiv.innerHTML = `
+  <div class="info">
+  <button class="close">close</button>
+  <h3>Task Details</h3>
+  <hr>
+  <p>Task Name: <br> ${selectedproject.todo[index].name}</p>
+  <p>Task Date:<br> ${selectedproject.todo[index].date}</p>
+  <p>Task Priority:<br> ${selectedproject.todo[index].priority}</p>
+  <p>Task Description: <br> ${selectedproject.todo[index].description}</p>
+  </div>
+  `;
+  };
+
+  const removedisplay = () => {
+    const infodiv = document.querySelector('.taskinfo');
+    infodiv.classList.remove('show');
+  };
+
+
+  const infodiv = document.querySelector('.taskinfo');
+  infodiv.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (e.target.classList.contains('close')) {
+      removedisplay();
+    }
+  });
+
+
+  const taskupdate = (index) => {
+    const selectedproject = projects.find((item) => item.id === selectedlistitem);
+    const tupdateform = document.querySelector('.taskupdate');
+    const uname = document.querySelector('#uname');
+    const udate = document.querySelector('#udate');
+    const upriority = document.querySelector('#upriority');
+    const udescription = document.querySelector('#udescription');
+    const uindex = document.querySelector('#index');
+    const tasklist = document.querySelector('.tasklist');
+    tasklist.classList.add('hide');
+    tupdateform.classList.add('tshow');
+    uname.value = selectedproject.todo[index].name;
+    udate.value = selectedproject.todo[index].date;
+    upriority.value = selectedproject.todo[index].priority;
+    udescription.value = selectedproject.todo[index].description;
+    uindex.value = index;
+  };
+
+
+  document.querySelector('#taskupdatecancel').addEventListener('click', (e) => {
+    e.preventDefault();
+    const tupdateform = document.querySelector('.taskupdate');
+    const tasklist = document.querySelector('.tasklist');
+    tasklist.classList.remove('hide');
+    tupdateform.classList.remove('tshow');
+  });
+
+
   const displaytask = () => {
     const selectedproject = projects.find((item) => item.id === selectedlistitem);
     const tasklist = document.querySelector('.tasklist');
@@ -75,6 +135,12 @@ const Logic = (projects, selectedlistitem, savelocal,stored) => {
     });
   };
 
+  const removetask = (index) => {
+    const selectedproject = projects.find((item) => item.id === selectedlistitem);
+    selectedproject.todo.splice(index, 1);
+    savelocal();
+    displaytask();
+  };
 
   document.querySelector('.projectlist').addEventListener('click', (e) => {
     if (e.target.tagName.toLowerCase() === 'li') {
@@ -82,7 +148,6 @@ const Logic = (projects, selectedlistitem, savelocal,stored) => {
       savelocal();
       displaytask();
       displayproject();
-      console.log(selectedlistitem);
     }
   });
 
@@ -118,7 +183,6 @@ const Logic = (projects, selectedlistitem, savelocal,stored) => {
     addtask();
     displaytask();
     tasklist.classList.remove('hide');
-    console.log(projects);
   });
 
   const taskcancel = document.querySelector('#taskcancel');
@@ -128,9 +192,15 @@ const Logic = (projects, selectedlistitem, savelocal,stored) => {
     const tasklist = document.querySelector('.tasklist');
     taskform.classList.add('hide');
     tasklist.classList.remove('hide');
-
-    console.log('working');
   });
+
+  const removeproject = (index) => {
+    projects.splice(index, 1);
+    selectedlistitem = stored[0].id;
+    savelocal();
+    displaytask();
+    displayproject();
+  };
 
   const projectcont = document.querySelector('.projectlist');
   projectcont.addEventListener('click', (e) => {
@@ -152,80 +222,6 @@ const Logic = (projects, selectedlistitem, savelocal,stored) => {
       const { index } = e.target.dataset;
       removetask(index);
     }
-  });
-
-  const removeproject = (index) => {
-    projects.splice(index, 1);
-    selectedlistitem=stored[0].id;
-    savelocal();
-    displayproject();
-  };
-
-
-  const removetask = (index) => {
-    const selectedproject = projects.find((item) => item.id === selectedlistitem);
-    selectedproject.todo.splice(index, 1);
-    savelocal();
-    displaytask();
-  };
-
-  const dtaskinfo = (index) => {
-    const selectedproject = projects.find((item) => item.id === selectedlistitem);
-    const infodiv = document.querySelector('.taskinfo');
-    infodiv.classList.add('show');
-    infodiv.innerHTML = `
-  <div class="info">
-  <button class="close">close</button>
-  <h3>Task Details</h3>
-  <hr>
-  <p>Task Name: <br> ${selectedproject.todo[index].name}</p>
-  <p>Task Date:<br> ${selectedproject.todo[index].date}</p>
-  <p>Task Priority:<br> ${selectedproject.todo[index].priority}</p>
-  <p>Task Description: <br> ${selectedproject.todo[index].description}</p>
-  </div>
-  `;
-  };
-
-  const infodiv = document.querySelector('.taskinfo');
-  infodiv.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (e.target.classList.contains('close')) {
-      removedisplay();
-    }
-  });
-
-
-  const removedisplay = () => {
-    const infodiv = document.querySelector('.taskinfo');
-    infodiv.classList.remove('show');
-  };
-
-
-  const taskupdate = (index) => {
-    const selectedproject = projects.find((item) => item.id === selectedlistitem);
-    const tupdateform = document.querySelector('.taskupdate');
-    const uname = document.querySelector('#uname');
-    const udate = document.querySelector('#udate');
-    const upriority = document.querySelector('#upriority');
-    const udescription = document.querySelector('#udescription');
-    const uindex = document.querySelector('#index');
-    const tasklist = document.querySelector('.tasklist');
-    tasklist.classList.add('hide');
-    tupdateform.classList.add('tshow');
-    uname.value = selectedproject.todo[index].name;
-    udate.value = selectedproject.todo[index].date;
-    upriority.value = selectedproject.todo[index].priority;
-    udescription.value = selectedproject.todo[index].description;
-    uindex.value = index;
-  };
-
-
-  document.querySelector('#taskupdatecancel').addEventListener('click', (e) => {
-    e.preventDefault();
-    const tupdateform = document.querySelector('.taskupdate');
-    const tasklist = document.querySelector('.tasklist');
-    tasklist.classList.remove('hide');
-    tupdateform.classList.remove('tshow');
   });
 
   document.querySelector('.taskupdate').addEventListener('submit', (e) => {
