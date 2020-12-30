@@ -1,17 +1,4 @@
-import Image from './assets/list.png';
-
 const Domelements = () => {
-  const navgenerator = () => {
-    const navbar = document.createElement('div');
-    navbar.classList.add('navbar');
-    navbar.innerHTML = `
-  <div class="itemcont">
-  <img src="${Image}" id="list">
-  <h3 id="todo">Todo-List</h3>
-  </div>`;
-
-    return navbar;
-  };
 
   const projectlist = () => {
     const projectul = document.createElement('ul');
@@ -147,9 +134,18 @@ const Domelements = () => {
   };
 
   return {
-    navgenerator,
     taskinfo,
     bodycont,
+    projectcont,
+    projectlist,
+    projectform,
+    projectform,
+    taskheading,
+    tasklist,
+    taskform,
+    taskupdateform,
+    taskinfo,
+    taskcont
   };
 };
 
