@@ -17,6 +17,8 @@ test('create project and check default todo array', () => {
 });
 
 test('create project and dont pass any todo info', () => {
-  const Test1 = Projectgenertor('hello',[{name:"my task",date:"10-02-21",priority:"low",description:"not work"}]);
+  const Test1 = Projectgenertor('hello', [{
+    name: 'my task', date: '10-02-21', priority: 'low', description: 'not work',
+  }]);
   expect(Test1.todo).toEqual([]);
 });

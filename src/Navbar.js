@@ -1,7 +1,7 @@
-import Image from "./assets/list.png"
+import Image from './assets/list.png';
 
 
-const Navbar=()=>{
+const Navbar = () => {
   const navgenerator = () => {
     const navbar = document.createElement('div');
     navbar.classList.add('navbar');
@@ -14,8 +14,7 @@ const Navbar=()=>{
     return navbar;
   };
 
-  return {navgenerator};
-
-}
+  return { navgenerator };
+};
 
 export default Navbar;

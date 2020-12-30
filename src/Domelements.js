@@ -1,5 +1,4 @@
 const Domelements = () => {
-
   const projectlist = () => {
     const projectul = document.createElement('ul');
     projectul.classList.add('projectlist');
@@ -139,13 +138,11 @@ const Domelements = () => {
     projectcont,
     projectlist,
     projectform,
-    projectform,
     taskheading,
     tasklist,
     taskform,
     taskupdateform,
-    taskinfo,
-    taskcont
+    taskcont,
   };
 };
 
