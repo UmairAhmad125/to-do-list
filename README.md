@@ -41,6 +41,16 @@ $ run npm install
 $ run "npm run build"
 $ run your "localhost server"
 ```
+## Testing
+To test the project:
+
+```bash
+
+$ run "npm run test"
+
+```
+
+
 ## Live vesion
 [click here](https://elegant-to-do-list.netlify.app/)
 
